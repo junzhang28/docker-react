@@ -1,0 +1,17 @@
+language: generic
+
+# Work on docker requires sudo
+sudo: required
+
+# Tell travis we need a copy of docker
+services:
+  - docker
+
+# commands to run before deploying project or running test suite
+# "jun/docker-react" is the tag name given to the built docker image
+before_install:
+  - docker build -t jun/docker-react -f Dockerfile.dev .
+
+# section to tell travis how to run test suite
+script:
+  - docker run -e CI=true jun/docker-react npm run test
