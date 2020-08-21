@@ -22,7 +22,7 @@ deploy:
   region: "eu-west-2"
   app: "docker-react"
   env: "DockerReact-env" # From aws console
-  bucket_name: "arn:aws:s3:::elasticbeanstalk-eu-west-2-348187322667" # Already created when creating EBS from aws console
+  bucket_name: "elasticbeanstalk-eu-west-2-348187322667" # Already created when creating EBS from aws console
   bucket_path: "docker-react" # The same as app name
   on:
     branch: master # Deploy only apply to push to master branch
